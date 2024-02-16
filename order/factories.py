@@ -23,8 +23,8 @@ class OrderFactory(factory.django.DjangoModelFactory):
             return
 
         if extracted:
-            for product in extracted:
-                self.product.add(product)
+            for products in extracted:
+                self.product.add(products)
 
     class Meta:
         model = Order
