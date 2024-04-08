@@ -6,11 +6,11 @@ ENV PYTHONUNBUFFERED=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=on \
     PIP_DEFAULT_TIMEOUT=100 \
     POETRY_VERSION=1.7.1 \
-    POETRY_HOME="/etc/poetry" \
+    POETRY_HOME="/opt/poetry" \
     POETRY_VIRTUALENVS_IN_PROJECT=true \
     POETRY_NO_INTERACTION=1 \
-    PYSETUP_PATH="/etc/pysetup" \
-    VENV_PATH="/etc/pysetup/.venv" \
+    PYSETUP_PATH="/opt/pysetup" \
+    VENV_PATH="/opt/pysetup/.venv" \
     PATH="$POETRY_HOME/bin:$VENV_PATH/bin:$PATH"
 
 FROM python-base as builder-base
@@ -20,13 +20,15 @@ RUN apt-get update \
         build-essential
 
 RUN pip install poetry
+RUN pip install django --upgrade
+RUN pip install django-rest-framework --upgrade
+RUN pip install django-extensions --upgrade
+RUN pip install django-debug-toolbar --upgrade
 
 WORKDIR $PYSETUP_PATH
 COPY poetry.lock pyproject.toml ./
 
 RUN poetry install --no-dev
-
-RUN poetry install
 
 WORKDIR /app
 COPY . /app/

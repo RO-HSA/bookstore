@@ -1,20 +1,20 @@
 [tool.poetry]
 name = "bookstore"
 version = "0.1.0"
-description = "Bookstore API"
-authors = ["Robert Santos <robertdahora@gmail.com>"]
-readme = "README.md"
+description = ""
+authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.12"
-pytest = "^7.4.4"
+python = "^3.10"
+pytest = "^8.1.1"
 factory-boy = "^3.3.0"
-django = "^5.0"
+Django = "^5.0.4"
 django-rest-framework = "^0.1.0"
 django-extensions = "^3.2.3"
 django-debug-toolbar = "^4.3.0"
 
+[tool.poetry.dev-dependencies]
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
