@@ -25,10 +25,16 @@ RUN pip install django-rest-framework --upgrade
 RUN pip install django-extensions --upgrade
 RUN pip install django-debug-toolbar --upgrade
 
+RUN pip install --force-reinstall 'requests<2.29.0' 'urllib3<2.0'
+
+RUN apt-get update \
+    && apt-get -y install libpq-dev gcc \
+    && pip install psycopg2
+
 WORKDIR $PYSETUP_PATH
 COPY poetry.lock pyproject.toml ./
 
-RUN poetry install --no-dev
+RUN poetry install --only main
 
 WORKDIR /app
 COPY . /app/
