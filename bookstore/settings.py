@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -143,6 +143,6 @@ REST_FRAMEWORK = {
     ],
 }
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = "django-insecure-1)*6n*@a#!wnj3b%6=g@3v^rx-@h4%&#dsf3nfxtb)x%=2&-qj"
 
 DEBUG = int(os.environ.get("DEBUG", default=0))

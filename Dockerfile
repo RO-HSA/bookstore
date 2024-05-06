@@ -20,6 +20,7 @@ RUN apt-get update \
         build-essential
 
 RUN pip install poetry
+RUN pip install --no-cache-dir factory-boy
 RUN pip install django --upgrade
 RUN pip install django-rest-framework --upgrade
 RUN pip install django-extensions --upgrade
