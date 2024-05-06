@@ -32,6 +32,8 @@ jobs:
       run: |
         python -m poetry install
         pip install --no-cache-dir factory-boy
+        pip install whitenoise
+        pip install gunicorn
         pip install django --upgrade
         pip install django-rest-framework --upgrade
         pip install django-extensions --upgrade
