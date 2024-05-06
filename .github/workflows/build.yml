@@ -36,8 +36,6 @@ jobs:
         pip install django-rest-framework --upgrade
         pip install django-extensions --upgrade
         pip install django-debug-toolbar --upgrade
-    - name: Start docker-compose
-      run: docker-compose -f "docker-compose.yml" up -d --build
     - name: Test
       run: |
         python manage.py test
