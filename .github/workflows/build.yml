@@ -36,7 +36,8 @@ jobs:
         pip install django-rest-framework --upgrade
         pip install django-extensions --upgrade
         pip install django-debug-toolbar --upgrade
-
+    - name: Start docker-compose
+      run: docker-compose up -d --build
     - name: Test
       run: |
         poetry run python manage.py test
