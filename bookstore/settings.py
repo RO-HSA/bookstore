@@ -143,6 +143,6 @@ REST_FRAMEWORK = {
     ],
 }
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = django-insecure-1)*6n*@a#!wnj3b%6=g@3v^rx-@h4%&#dsf3nfxtb)x%=2&-qj
 
 DEBUG = int(os.environ.get("DEBUG", default=0))
