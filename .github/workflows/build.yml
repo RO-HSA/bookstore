@@ -29,7 +29,13 @@ jobs:
 
     - name: Install dependencies
       shell: bash
-      run: python -m poetry install
+      run: |
+        python -m poetry install
+        pip install --no-cache-dir factory-boy
+        pip install django --upgrade
+        pip install django-rest-framework --upgrade
+        pip install django-extensions --upgrade
+        pip install django-debug-toolbar --upgrade
 
     - name: Test
       run: |
