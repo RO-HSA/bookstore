@@ -10,11 +10,16 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@master
         with:
-          python-version: 3.12
+          python-version: 3.11
       - name: Install poetry
         run: |
           pip install -U pip
           pip install poetry
+          pip install factory-boy
+          pip install django --upgrade
+          pip install django-rest-framework --upgrade
+          pip install django-extensions --upgrade
+          pip install django-debug-toolbar --upgrade
           poetry install
         env:
           POETRY_VIRTUALENVS_CREATE: false
