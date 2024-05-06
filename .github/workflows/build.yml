@@ -39,5 +39,7 @@ jobs:
         pip install django-extensions --upgrade
         pip install django-debug-toolbar --upgrade
     - name: Test
+      env:
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: |
         python manage.py test
