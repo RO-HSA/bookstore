@@ -4,7 +4,7 @@ jobs:
 
   qa:
     name: Quality check
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python
@@ -36,6 +36,8 @@ jobs:
       - name: Test
         run: |
           poetry run python manage.py test
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
       - name: Wemake Python Stylguide
         uses: wemake-services/wemake-python-styleguide@0.16.0
         continue-on-error: true
