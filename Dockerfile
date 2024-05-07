@@ -21,6 +21,8 @@ RUN apt-get update \
 
 RUN pip install poetry
 RUN pip install --no-cache-dir factory-boy
+RUN pip install gunicorn
+RUN pip install whitenoise
 RUN pip install django --upgrade
 RUN pip install django-rest-framework --upgrade
 RUN pip install django-extensions --upgrade
