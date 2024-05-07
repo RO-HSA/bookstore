@@ -32,10 +32,14 @@ jobs:
       run: |
         python -m poetry install
         pip install --no-cache-dir factory-boy
+        pip install whitenoise
+        pip install gunicorn
         pip install django --upgrade
         pip install django-rest-framework --upgrade
         pip install django-extensions --upgrade
         pip install django-debug-toolbar --upgrade
     - name: Test
+      env:
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: |
         python manage.py test
