@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'rohsa-bookstore-api-669704e75bc4.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'rohsa-bookstore-api-3492bce1798e.herokuapp.com']
 
 
 # Application definition
